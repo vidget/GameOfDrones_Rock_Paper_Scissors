@@ -1,0 +1,56 @@
+﻿@model IEnumerable<GameOfDrones_Rock_Paper_Scissors.Models.GameHistory>
+
+@{
+    ViewBag.Title = "GameHistoryList";
+    Layout = "~/Views/Shared/_LayoutB.cshtml";
+}
+<body background="~/Images/stonewall.jpg">
+</body>
+<h2>Game Scoring</h2>
+
+
+<table class="table">
+    <tr>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.GameNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlayerOne)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlayerTwo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GameWinner)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberOfRounds)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.GameNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlayerOne)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlayerTwo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GameWinner)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberOfRounds)
+        </td>
+        
+    </tr>
+}
+
+</table>
+

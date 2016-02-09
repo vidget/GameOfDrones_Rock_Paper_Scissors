@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Data.Entity;
+using GameOfDrones_Rock_Paper_Scissors.Models;
+
+namespace GameOfDrones_Rock_Paper_Scissors.Context
+{
+    public class GameContext : DbContext
+    {
+
+        // You can add custom code to this file. Changes will not be overwritten.
+        //
+        // If you want Entity Framework to drop and regenerate your database
+        // automatically whenever you change your model schema,
+        // please use data migrations.
+        // For more information refer to the documentation:
+        // http://msdn.microsoft.com/en-us/data/jj591621.aspx
+
+
+        public DbSet<Game> Games { get; set; }
+        public DbSet<RoundHistory> RoundHistorys { get; set; }
+        public DbSet<GameHistory> GameHistorys { get; set; }
+
+
+
+    }
+}

@@ -1,0 +1,82 @@
+﻿@model GameOfDrones_Rock_Paper_Scissors.Models.Game
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Game</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PlayerOneName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlayerOneName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlayerTwoName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlayerTwoName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlayerOneSelection)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlayerOneSelection)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlayerTwoSelection)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlayerTwoSelection)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlayerOneScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlayerOneScore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlayerTwoScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlayerTwoScore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoundWinner)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoundWinner)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GameWinner)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GameWinner)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RoundNumber }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

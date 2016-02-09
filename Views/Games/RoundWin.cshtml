@@ -1,0 +1,45 @@
+﻿@model GameOfDrones_Rock_Paper_Scissors.Models.Game
+
+<center><img alt="" src="~/Images/RoundComplete.jpg" /></center>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <body background="~/Images/stonewall.jpg">
+    </body>
+    <center>
+        
+        <div class="form-horizontal">
+            <h3>@ViewBag.Message <!-- game.PlayerOneName.ToString() + " selected " + game.PlayerOneSelection.ToString() + ", " + game.PlayerTwoName.ToString() +" selected "+ game.PlayerTwoSelection;  --></h3>
+            <h2>@ViewBag.Message2 <!--  ViewBag.Message2 = winner +" won!";" --></h2>
+
+
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            @Html.HiddenFor(model => model.RoundNumber)
+            @Html.HiddenFor(model => model.PlayerOneName)
+            @Html.HiddenFor(model => model.PlayerTwoName)
+            @Html.HiddenFor(model => model.PlayerOneSelection)
+            @Html.HiddenFor(model => model.PlayerTwoSelection)
+            @Html.HiddenFor(model => model.PlayerOneScore)
+            @Html.HiddenFor(model => model.PlayerTwoScore)
+            @Html.HiddenFor(model => model.RoundCount)
+            @Html.HiddenFor(model => model.RoundWinner)
+            @Html.HiddenFor(model => model.GameWinner)
+
+            
+            <div class="form-group">
+                <div class="col-md-offset-0 col-md-10">
+                    <input type="submit" value="Continue" class="btn btn-default" />
+                </div>
+            </div>
+
+        </div>
+       
+    </center>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

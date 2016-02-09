@@ -1,0 +1,69 @@
+﻿@model GameOfDrones_Rock_Paper_Scissors.Models.Game
+
+@{
+    ViewBag.Title = "Play";
+}
+<body background="~/Images/stonewall.jpg">
+    </body>
+    <h2>New Game</h2>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>Enter Player's Names</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.RoundNumber)
+
+            @Html.HiddenFor(model => model.PlayerOneSelection)
+            @Html.HiddenFor(model => model.PlayerTwoSelection)
+            @Html.HiddenFor(model => model.PlayerOneScore)
+            @Html.HiddenFor(model => model.PlayerTwoScore)
+            @Html.HiddenFor(model => model.RoundCount)
+            @Html.HiddenFor(model => model.RoundWinner)
+            @Html.HiddenFor(model => model.GameWinner)
+
+
+            <div class="form-group">
+               
+                <div class="col-md-4">
+                    <div>
+                        Player One:
+                    </div>
+                    @Html.EditorFor(model => model.PlayerOneName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PlayerOneName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                
+                <div class="col-md-4">
+                    <div>
+                        Player Two:
+                    </div>
+                    @Html.EditorFor(model => model.PlayerTwoName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PlayerTwoName, "", new { @class = "text-danger" })
+                </div>
+                
+               
+            </div>
+
+
+
+            <div class="form-group">
+                <div class="col-md-offset-0 col-md-10">
+                    <input type="submit" value="Start Game" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

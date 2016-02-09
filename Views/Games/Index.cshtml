@@ -1,0 +1,85 @@
+﻿@model IEnumerable<GameOfDrones_Rock_Paper_Scissors.Models.Game>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PlayerOneName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlayerTwoName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlayerOneSelection)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlayerTwoSelection)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlayerOneScore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlayerTwoScore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoundCount)
+        </th>
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.RoundWinner)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GameWinner)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlayerOneName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlayerTwoName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlayerOneSelection)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlayerTwoSelection)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlayerOneScore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlayerTwoScore)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.RoundCount)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.RoundWinner)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GameWinner)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.RoundNumber }) |
+            @Html.ActionLink("Details", "Details", new { id=item.RoundNumber }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.RoundNumber })
+        </td>
+    </tr>
+}
+
+</table>

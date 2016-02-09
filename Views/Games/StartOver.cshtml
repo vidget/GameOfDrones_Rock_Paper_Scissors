@@ -1,0 +1,43 @@
+﻿@model GameOfDrones_Rock_Paper_Scissors.Models.Game
+
+@{
+    ViewBag.Title = "StartOver";
+}
+
+<h2>StartOver</h2>
+
+<body background="~/Images/stonewall.jpg">
+</body>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Are you sure? Current GAME will be Lost!</h4>
+        <hr />
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.RoundNumber)
+        @Html.HiddenFor(model => model.PlayerOneName)
+        @Html.HiddenFor(model => model.PlayerTwoName)
+        @Html.HiddenFor(model => model.PlayerOneSelection)
+        @Html.HiddenFor(model => model.PlayerTwoSelection)
+        @Html.HiddenFor(model => model.PlayerOneScore)
+        @Html.HiddenFor(model => model.PlayerTwoScore)
+        @Html.HiddenFor(model => model.RoundCount)
+        @Html.HiddenFor(model => model.RoundWinner)
+        @Html.HiddenFor(model => model.GameWinner)
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Start Again" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
